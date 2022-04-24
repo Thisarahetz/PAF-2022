@@ -1,4 +1,4 @@
-package com.billManagement;
+package com.BillManagement;
 
 public class Bill {
 
