@@ -1,4 +1,4 @@
-package com.billManagement;
+package com.BillManagement;
 
 import java.sql.*;
 import java.text.SimpleDateFormat;
