@@ -1,4 +1,4 @@
-# PUF-2022
+# PAF-2022
 
 <b>
   The project is about a web application that maintains the power grid of the country. It named as ElectroGrid and all the data that belongs to the power consumption of the users monitor from the system, generate the monthly bills, and automatically send to the users and accept the online payments from the users, maintains by via online system. 
