@@ -33,7 +33,7 @@ public class Users {
                 + " values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)"; 
                 PreparedStatement preparedStmt = con.prepareStatement(query); 
                 // binding values
-                preparedStmt.setString(1, "AN"+nic.substring(0,6)); 
+                preparedStmt.setString(1, "AN"+nic.substring(0,9)); 
                 preparedStmt.setBoolean(2, isAdmin); 
                 preparedStmt.setString(3, firstName); 
                 preparedStmt.setString(4, lastName);  
@@ -49,7 +49,7 @@ public class Users {
                 // execute the statement
                 preparedStmt.execute(); 
                 con.close(); 
-                output = "User Register successfully"; 
+                output = "User Registerd successfully"; 
             } 
             catch (Exception e) 
             { 
