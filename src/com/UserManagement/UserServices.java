@@ -36,4 +36,50 @@ public class UserServices {
 	return output; 
 	}
 
+	//Read User Details details 
+	@GET
+	@Path("/") 
+	@Produces(MediaType.TEXT_HTML) 
+	public String getUserDetails() 
+	{ 
+		return users.readUsers(); 
+	}
+	
+	@PUT
+	@Path("/Update") 
+	@Consumes(MediaType.APPLICATION_JSON) 
+	@Produces(MediaType.TEXT_PLAIN) 
+	public String updateUser(String paymentData) 
+	{ 
+	//Convert the input string to a JSON object 
+	 JsonObject paymentObject = new JsonParser().parse(paymentData).getAsJsonObject(); 
+	//Read the values from the JSON object
+	  
+	 String accountId  = paymentObject.get("accountId").getAsString();
+	 String isAdmin = paymentObject.get("isAdmin").getAsString(); 
+	 String firstName = paymentObject.get("firstName").getAsString(); 
+	 String lastName = paymentObject.get("lastName").getAsString(); 
+	 String nic = paymentObject.get("nic").getAsString(); 
+	 String permanantAddress = paymentObject.get("permanantAddress").getAsString(); 
+	 String mobileNumber = paymentObject.get("mobileNumber").getAsString(); 
+	 String landNumber = paymentObject.get("landNumber").getAsString(); 
+	 String email = paymentObject.get("email").getAsString(); 
+	 String userPassword = paymentObject.get("userPassword").getAsString(); 
+	 String areaoffice = paymentObject.get("areaoffice").getAsString(); 
+	 String joinDate = paymentObject.get("joinDate").getAsString();  
+	 
+	 String output = users.updateUser(accountId, isAdmin, firstName, lastName, nic, permanantAddress, mobileNumber, landNumber, email, userPassword, areaoffice, joinDate);
+	return output; 
+	
+	}
+	
+	//Remove the payment
+			@DELETE
+			@Path("/Delete/{accountId}")
+			@Produces(MediaType.TEXT_PLAIN)
+			public String deletePayment(@PathParam("accountId") String accountId) {
+				String response = users.deleteUser(accountId);
+				return response;
+			}
+
 }
